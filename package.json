@@ -1,0 +1,25 @@
+{
+  "name": "demo1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:1": "nodemon --inspect demos/demo1/index.js",
+    "start:2": "nodemon --inspect demos/demo2/index.js",
+    "start:3": "nodemon --inspect demos/demo3/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "express": "^4.16.2",
+    "express-vue": "^5.2.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.1",
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.2"
+  }
+}
