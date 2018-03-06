@@ -1,7 +1,13 @@
 const expressVue = require("express-vue");
+var bodyParser = require("body-parser");
 const express = require("express");
 const axios = require("axios");
 const app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true,
+}));
 
 const evOptions = {
     rootPath: __dirname,
@@ -22,9 +28,9 @@ app.get("/", function(req, res) {
         });
 });
 
-app.get("/dogs/:breed", function(req, res) {
+app.post("/dogs", function(req, res) {
     let data = {};
-    axios.get(`https://dog.ceo/api/breed/${req.params.breed}/images/random`)
+    axios.get(`https://dog.ceo/api/breed/${req.body.breed}/images/random`)
         .then(response => {
             data.image = response.data.message;
             res.json(data);

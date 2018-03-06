@@ -25,10 +25,8 @@ export default {
   methods: {
     getBreed: function(breed) {
       const vm = this;
-      const url = "/dogs/" + breed
-      axios.get(url)
+      axios.post("/dogs", {breed: breed})
         .then(function(response) {
-          vm.$emit("change", breed);
           vm.doggo = response.data.image;
         })
     }
